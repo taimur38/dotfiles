@@ -1,0 +1,15 @@
+configuration {
+    modi: "window,drun,run,ssh,combi";
+    font: "Consolas 18";
+    combi-modi: "window,run,drun,ssh";
+    show-icons: true;
+    max-history-size: 2;
+    icon-theme: "Papirus";
+    terminal: "alacritty";
+
+    display-run: "Run:";
+
+    drun-match-fields: "name";
+}
+
+@theme "gruvbox"

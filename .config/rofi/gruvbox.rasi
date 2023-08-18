@@ -1,0 +1,133 @@
+configuration {
+    font: "Consolas 16";
+    drun {
+        display-name: "";
+    }
+
+    run {
+        display-name: "";
+    }
+
+    window {
+        display-name: "";
+    }
+	show-icons:     true;
+	sidebar-mode:   false;
+}
+
+* {
+	background-color: #282828;
+	text-color:       #ebdbb2;
+	selbg:            #ebdbb2; 
+	actbg:            #ebdbb2; 
+	urgbg:            #fb4934;
+	winbg:			  @text-color;
+
+	selected-normal-foreground: @winbg;
+	normal-foreground:          @text-color;
+	selected-normal-background: @actbg;
+	normal-background:          @background-color;
+
+	selected-urgent-foreground: @background-color;
+	urgent-foreground:          @text-color;
+	selected-urgent-background: @urgbg;
+	urgent-background:          @background-color;
+
+	selected-active-foreground: @winbg;
+	active-foreground:          @text-color;
+	selected-active-background: @actbg;
+	active-background:          @selbg;
+
+	line-margin:     0;
+	line-padding:    0;
+	separator-style: "none";
+	hide-scrollbar:  "true";
+	margin:          0;
+	padding:         0;
+}
+
+window {
+	children: [mainbox];
+    transparency: "real";
+    border: 2px;
+    border-radius: 10px;
+    border-color: @text-color;
+}
+
+mainbox {
+	spacing:  0.5em;
+	children: [inputbar, listview];
+}
+
+button {
+	padding: 5px 2px;
+}
+
+button selected {
+	background-color: @active-background;
+	text-color:       @text-color;
+}
+
+inputbar {
+	padding: 5px;
+	spacing: 5px;
+    children: [prompt, entry];
+}
+
+listview {
+    lines: 8;
+}
+
+element {
+	padding: 5px;
+    children: [element-icon, element-text];
+}
+
+entry {
+	text-color:     @normal-foreground;
+	vertical-align: 1;
+	padding:        12px;
+}
+
+prompt {
+    padding: 12px;
+}
+
+element-icon {
+  padding: 10px 10px;
+}
+
+element-icon selected {
+  background-color: @text-color;
+}
+
+
+element-text {
+  padding: 10px 0;
+}
+
+element-text selected {
+  text-color: @background-color;
+  background-color: @text-color;
+}
+
+element normal.normal {
+	background-color: @normal-background;
+	text-color:       @normal-foreground;
+}
+
+element normal.urgent {
+	background-color: @urgent-background;
+	text-color:       @urgent-foreground;
+}
+
+element normal.active {
+	background-color: @active-background;
+	text-color:       @active-foreground;
+}
+
+element selected.normal {
+	background-color: @text-color;
+	text-color:       @background-color;
+}
+
